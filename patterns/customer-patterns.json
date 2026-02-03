@@ -1,0 +1,12 @@
+[
+  "quote|estimate|bid",
+  "how much|price|cost",
+  "schedule|appointment|available",
+  "project|job|work",
+  "concrete|foundation|slab|driveway|patio|sidewalk",
+  "remodel|renovation|repair",
+  "bathroom|kitchen|basement",
+  "interested in|looking for|need",
+  "address is|located at|property",
+  "call.*(back|me)|return.*call"
+]

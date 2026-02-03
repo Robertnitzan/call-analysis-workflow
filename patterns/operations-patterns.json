@@ -1,0 +1,15 @@
+[
+  "delivery|delivering|dropped off",
+  "schedule.*(pickup|delivery)",
+  "material|supplies|order",
+  "invoice|payment|bill",
+  "employee|worker|crew",
+  "this is .* from .* (supply|materials|lumber)",
+  "contractor|subcontractor",
+  "permit|inspection",
+  "floor and decor|home depot|lowes",
+  "pay|paying|payment",
+  "truck|trailer|equipment",
+  "job site|site address",
+  "tomorrow|yesterday|this morning"
+]
