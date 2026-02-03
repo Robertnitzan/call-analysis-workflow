@@ -55,7 +55,6 @@ dashboard/
   /* Category Colors */
   --color-customer: #22c55e;
   --color-spam: #ef4444;
-  --color-b2b: #f97316;
   --color-operations: #3b82f6;
   --color-incomplete: #71717a;
   
@@ -81,7 +80,6 @@ dashboard/
 ## Dashboard Tabs
 
 ### 1. Call List (Main)
-- Stats grid: Total, Customers, Spam, B2B, Answered, Missed
 - Incomplete breakdown card
 - Filter buttons (category + status)
 - Date range filter
@@ -120,7 +118,6 @@ function CategoryBadge({ category }) {
   const labels = {
     customer: 'Customer',
     spam: 'Spam',
-    b2b: 'B2B/Vendor',
     operations: 'Operations',
     incomplete: 'Incomplete'
   };

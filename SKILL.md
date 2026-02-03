@@ -10,7 +10,7 @@ Build professional call analysis dashboards for businesses using CallRail.
 ## Overview
 
 This workflow transforms raw CallRail data into an insightful dashboard showing:
-- Call categories (Customer, Spam, B2B/Vendor, Operations, Incomplete)
+- Call categories (Customer, Spam, Operations, Incomplete)
 - Missed opportunities (customer voicemails that need follow-up)
 - Sentiment analysis per call
 - Transcripts with speaker diarization
@@ -92,14 +92,14 @@ See: `references/4-classify.md`
 |----------|-------------|----------|
 | customer | Real customer inquiries | quote, estimate, price, schedule, project |
 | spam | Robocalls, solicitation | warranty, medicare, press 1, insurance |
-| b2b | Business/vendor calls | company names, "reaching out", engineers |
+
 | operations | Internal/employee calls | delivery, materials, job site |
 | incomplete | Can't classify | No recording, too short, unclear |
 
 **Classification logic:**
 1. No transcript → `incomplete`
 2. Check spam patterns → `spam` if matched
-3. Check B2B patterns → `b2b` if matched
+
 4. Check customer patterns → `customer` if matched
 5. Check operations patterns → `operations` if matched
 6. Fallback by direction: outbound → `operations`, inbound → `customer` or `incomplete`
@@ -118,7 +118,7 @@ See: `references/5-build-dashboard.md`
 **Dashboard structure:**
 ```
 ├── Tabs: Call List | Missed Opportunities | Methodology
-├── Stats Grid: Total, Customers, Spam, B2B, Answered, Missed
+├── Stats Grid: Total, Customers, Spam, Operations, Answered, Missed
 ├── Filters: Category, Status, Date Range, Search
 ├── Call Table: Date, Status, Duration, Category, Confidence, Sentiment, Recording
 └── Call Detail Modal: Full transcript, speaker labels, sentiment breakdown
@@ -132,7 +132,7 @@ See: `references/5-build-dashboard.md`
 --text-muted: #71717a
 --color-customer: #22c55e
 --color-spam: #ef4444
---color-b2b: #f97316
+
 ```
 
 ### Step 6: Deploy to Vercel
@@ -174,7 +174,7 @@ vercel --prod --yes
   "generated_at": "2026-02-03T...",
   "stats": {
     "total": 415,
-    "by_category": { "customer": 49, "spam": 71, "b2b": 75, ... },
+    "by_category": { "customer": 63, "spam": 129, "operations": 12, ... },
     "answered": 309,
     "unanswered": 106,
     "voicemail": 38
@@ -218,6 +218,6 @@ See: `examples/rhino-concrete/`
 
 **Stats:**
 - 415 total calls (Jan 2026)
-- 49 customers, 71 spam, 75 B2B, 9 operations, 211 incomplete
+- 63 customers, 129 spam, 12 operations, 211 incomplete
 - 244 calls transcribed with AssemblyAI (95.2% avg confidence)
 - 6 missed opportunities identified

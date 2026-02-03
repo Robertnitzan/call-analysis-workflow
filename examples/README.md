@@ -16,7 +16,7 @@
 | Date Range | Jan 2-Feb 3, 2026 |
 | Customers | 49 (11.8%) |
 | Spam | 71 (17.1%) |
-| B2B/Vendors | 75 (18.1%) |
+
 | Operations | 9 (2.2%) |
 | Incomplete | 211 (50.8%) |
 | Transcribed | 244 |

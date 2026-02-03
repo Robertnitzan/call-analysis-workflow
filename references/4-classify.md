@@ -6,7 +6,6 @@
 |----------|-------|-------------|
 | `customer` | 🟢 Green | Real customer inquiries, quotes, scheduling |
 | `spam` | 🔴 Red | Robocalls, solicitation, scams |
-| `b2b` | 🟠 Orange | Business calls, vendors, suppliers |
 | `operations` | 🔵 Blue | Internal, employees, contractors |
 | `incomplete` | ⚪ Gray | No recording, too short, unclear |
 
@@ -31,8 +30,6 @@ function classifyCall(call) {
     return { category: 'spam', reason: 'Spam patterns detected' };
   }
   
-  if (matchesPatterns(text, B2B_PATTERNS)) {
-    return { category: 'b2b', reason: 'B2B/vendor patterns detected' };
   }
   
   if (matchesPatterns(text, OPERATIONS_PATTERNS)) {
@@ -86,7 +83,6 @@ Patterns are stored in `patterns/` directory as JSON arrays of regex strings.
 ]
 ```
 
-### patterns/b2b-patterns.json
 ```json
 [
   "capital registration",
