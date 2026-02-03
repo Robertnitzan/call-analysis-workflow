@@ -180,7 +180,7 @@ vercel --prod --yes
     "inbound_missed": 105,
     "with_recording": 249,
     "voicemail": 38,
-    "by_category": { "customer": 36, "spam": 131, "operations": 12, "incomplete": 236 },
+    "by_category": { "customer": 34, "spam": 133, "operations": 12, "incomplete": 236 },
     "inbound_answered_by_category": { "customer": 29, "spam": 111, "operations": 9, "incomplete": 79 }
   },
   "calls": [
@@ -222,16 +222,19 @@ See: `examples/rhino-concrete/`
 
 **Stats (Jan 2026):**
 - 415 total calls (333 inbound + 82 outbound)
-- 228 inbound answered (105 missed, 38 voicemail)
+- 333 inbound breakdown: 228 answered + 38 voicemail + 67 missed
 - 249 with recording (all inbound), 166 without
 
 **Classification of 228 Inbound Answered:**
-- 111 spam (48.7%) - cold calls, robocalls, sales pitches
-- 29 customers (12.7%) - real inquiries
-- 9 operations (3.9%) - suppliers, insurance
-- 79 incomplete (34.6%) - too short/unclear to classify
+- 111 spam (49%) - cold calls, robocalls, sales pitches
+- 29 customers (13%) - real inquiries about concrete work
+- 9 operations (4%) - suppliers, insurance, accounting
+- 79 incomplete (35%) - too short/unclear to classify
+
+**Missed Opportunities (6 customer voicemails):**
+Real leads that went to voicemail and need follow-up.
 
 **Why 166 calls have no recording:**
 - 82 outbound (not recorded by CallRail)
-- 70 inbound missed (no one answered = nothing to record)
+- 70 inbound missed without voicemail (nothing to record)
 - 14 inbound answered without recording (CallRail config issue)
