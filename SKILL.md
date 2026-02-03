@@ -174,10 +174,14 @@ vercel --prod --yes
   "generated_at": "2026-02-03T...",
   "stats": {
     "total": 415,
-    "by_category": { "customer": 63, "spam": 129, "operations": 12, ... },
-    "answered": 309,
-    "unanswered": 106,
-    "voicemail": 38
+    "inbound": 333,
+    "outbound": 82,
+    "inbound_answered": 228,
+    "inbound_missed": 105,
+    "with_recording": 249,
+    "voicemail": 38,
+    "by_category": { "customer": 36, "spam": 131, "operations": 12, "incomplete": 236 },
+    "inbound_answered_by_category": { "customer": 29, "spam": 111, "operations": 9, "incomplete": 79 }
   },
   "calls": [
     {
@@ -216,8 +220,18 @@ See: `examples/rhino-concrete/`
 
 **Live dashboard:** https://rhino-call-analyzer.vercel.app
 
-**Stats:**
-- 415 total calls (Jan 2026)
-- 63 customers, 129 spam, 12 operations, 211 incomplete
-- 244 calls transcribed with AssemblyAI (95.2% avg confidence)
-- 6 missed opportunities identified
+**Stats (Jan 2026):**
+- 415 total calls (333 inbound + 82 outbound)
+- 228 inbound answered (105 missed, 38 voicemail)
+- 249 with recording (all inbound), 166 without
+
+**Classification of 228 Inbound Answered:**
+- 111 spam (48.7%) - cold calls, robocalls, sales pitches
+- 29 customers (12.7%) - real inquiries
+- 9 operations (3.9%) - suppliers, insurance
+- 79 incomplete (34.6%) - too short/unclear to classify
+
+**Why 166 calls have no recording:**
+- 82 outbound (not recorded by CallRail)
+- 70 inbound missed (no one answered = nothing to record)
+- 14 inbound answered without recording (CallRail config issue)
